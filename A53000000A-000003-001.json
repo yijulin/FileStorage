@@ -1,0 +1,131 @@
+[{ 
+	    "success": true, 
+	    "result": {     
+		    "resource_id": "A53000000A-000003-001",     
+		    "fields":[
+  {
+    "type": "int4",
+    "id": "Seq"
+  },
+  {
+    "type": "text",
+    "id": "name"
+  },
+  {
+    "type": "text",
+    "id": "AlsoKnownAs"
+  },
+  {
+    "type": "text",
+    "id": "shop"
+  },
+  {
+    "type": "text",
+    "id": "address"
+  },
+  {
+    "type": "text",
+    "id": "telephone"
+  },
+  {
+    "type": "text",
+    "id": "awards"
+  }
+],     
+            "records":[
+  {
+    "Seq": 1,
+    "name": "山玉芙蓉",
+    "AlsoKnownAs": "",
+    "shop": "紅磚美食坊",
+    "address": "新竹縣尖石鄉嘉樂村9鄰99號",
+    "telephone": "03-5842440",
+    "awards": "原住民族委員會2010原住民嚴選十大美食"
+  },
+  {
+    "Seq": 2,
+    "name": "刺蔥涼拌山豬肉",
+    "AlsoKnownAs": "",
+    "shop": "山清休閒農園",
+    "address": "新竹縣尖石鄉梅花村1鄰24-1號",
+    "telephone": "0932757931",
+    "awards": "原住民族委員會2010原住民嚴選十大美食"
+  },
+  {
+    "Seq": 3,
+    "name": "打那壽司",
+    "AlsoKnownAs": "",
+    "shop": "東眼山農場",
+    "address": "桃園縣復興鄉雲霞村佳志5鄰20號",
+    "telephone": "03-3821198",
+    "awards": "原住民族委員會2010原住民嚴選十大美食"
+  },
+  {
+    "Seq": 4,
+    "name": "雷貢糕",
+    "AlsoKnownAs": "飛魚蘿蔔糕",
+    "shop": "芭達桑原住民主題餐廳",
+    "address": "新北市八里區觀海大道111號",
+    "telephone": "02-86304612",
+    "awards": "原住民族委員會2010原住民嚴選十大美食"
+  },
+  {
+    "Seq": 5,
+    "name": "山豬肉刺蔥刈包",
+    "AlsoKnownAs": "",
+    "shop": "田媽媽泰雅風味館",
+    "address": "宜蘭縣大同鄉松羅村玉蘭巷2號",
+    "telephone": "03-9801903",
+    "awards": "原住民族委員會2010原住民嚴選十大美食"
+  },
+  {
+    "Seq": 6,
+    "name": "馬告燒鴨",
+    "AlsoKnownAs": "",
+    "shop": "馬告風味餐坊",
+    "address": "新竹縣尖石鄉嘉樂村1鄰1-15號",
+    "telephone": "03-5842790",
+    "awards": "原住民族委員會2010原住民嚴選十大美食"
+  },
+  {
+    "Seq": 7,
+    "name": "火山慢慢爬",
+    "AlsoKnownAs": "",
+    "shop": "三番兩次原住民餐廳",
+    "address": "花蓮縣花蓮市中山路一段386-6號",
+    "telephone": "03-8463131",
+    "awards": "原住民族委員會2010原住民嚴選十大美食"
+  },
+  {
+    "Seq": 8,
+    "name": "香蕉糕",
+    "AlsoKnownAs": "",
+    "shop": "達基力部落屋",
+    "address": "花蓮縣秀林鄉崇德村7鄰96號",
+    "telephone": "03-8621033",
+    "awards": "原住民族委員會2010原住民嚴選十大美食"
+  },
+  {
+    "Seq": 9,
+    "name": "甜蜜美人捲",
+    "AlsoKnownAs": "",
+    "shop": "響羅雷美食坊",
+    "address": "臺東縣卑南鄉利嘉村利嘉路689巷19-1號",
+    "telephone": "089-385366",
+    "awards": "原住民族委員會2010原住民嚴選十大美食"
+  },
+  {
+    "Seq": 10,
+    "name": "野菜拼盤",
+    "AlsoKnownAs": "",
+    "shop": "紅瓦屋文化美食餐廳",
+    "address": "花蓮縣光復鄉大全村大全街62巷16號",
+    "telephone": "03-8704601",
+    "awards": "原住民族委員會2010原住民嚴選十大美食"
+  }
+],     
+            "limit":0,     
+            "offset":0,     
+            "total":10 
+        } 
+    }]
