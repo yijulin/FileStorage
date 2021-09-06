@@ -1,0 +1,98 @@
+﻿@section buttonJS{
+    <script>
+        let thedata = null;
+        let orderbyitem = [];
+        //let orderbyitem = {
+        //    "Seq": true, "name": true, "AlsoKnownAs": true, "shop": true, "address": true, "telephone": true,"awards":true
+        //};
+        function getdata(way) {
+            alert("開始");
+            let url = "";
+            switch (way) {
+                case "XML": url = 'https://raw.githubusercontent.com/yijulin/FileStorage/main/A53000000A-000003-002.xml'; break;
+                case "Json": url = 'https://raw.githubusercontent.com/yijulin/FileStorage/main/A53000000A-000003-001.json'; break;
+            }
+            $.ajax({
+                url: `/api/Teast/GetData?url=${url}&way=${way}`,
+                type: "GET",
+                success: function (data) {
+                    console.dir(data);
+                    thedata = data.Result.Result;
+
+                    orderbyitem = [];
+                    var keys = Object.keys(thedata[0]);
+                    keys.forEach(key => {
+                        orderbyitem[key] = true;
+                    });
+                    settable(thedata);
+                },
+                error: function (jqXHR, errmsg) {
+                    console.error(errmsg);
+                },
+                complete: function () {
+                    alert("取得結果");
+                }
+
+            });
+        }
+
+        function settable(data) {
+            var table = document.getElementById('thetable');
+            table.innerHTML = "";
+            data.forEach((items, index) => {
+                var keys = Object.keys(items);
+                if (index < 1) {
+                    var thtr = document.createElement('tr');
+                    thtr.setAttribute('class','row');
+                    keys.forEach(key => {
+                        var th = document.createElement('th');
+                        th.setAttribute('class', 'col-lg-2');
+                        th.setAttribute('onclick',`orderby("${key}")`);
+                        th.innerText = key;
+                        thtr.appendChild(th);
+                    });
+                    table.appendChild(thtr);
+                }
+                var tr = document.createElement('tr');
+                tr.setAttribute('class','row');
+                keys.forEach(key => {
+                    var td = document.createElement('td');
+                    td.setAttribute('class', 'col-lg-2');
+                    td.innerText = items[key];
+                    tr.appendChild(td);
+                });
+
+                table.appendChild(tr);
+            });
+        }
+
+        function orderby(what) {
+            console.log(what, orderbyitem[what])
+            if (orderbyitem[what]) {
+                thedata.sort(orderbywhat(what));
+                console.log(0);
+            } else {
+                thedata.sort(orderbywhat(what)).reverse();
+                console.log(1);
+            }
+            orderbyitem[what] = !orderbyitem[what];
+            settable(thedata);
+        }
+        function orderbywhat(what) {
+            return function (a, b) {
+                if (typeof (a[what]) === "string") {
+                    if (b[what] == null) b[what] = "";
+                    if (a[what] == null) a[what] = "";
+                    return (b[what].localeCompare(a[what]));
+                } else {
+                    return (b[what] - a[what]);
+                }
+            }
+        }
+    </script>
+}
+<button onclick="getdata('XML')">get xml</button>
+<button onclick="getdata('Json')">get json</button>
+<table id="thetable">
+
+</table>
