@@ -1,6 +1,7 @@
 ﻿@section buttonJS{
     <script>
         let thedata = null;
+        let showdata = null;
         let orderbyitem = [];
         //let orderbyitem = {
         //    "Seq": true, "name": true, "AlsoKnownAs": true, "shop": true, "address": true, "telephone": true,"awards":true
@@ -24,7 +25,8 @@
                     keys.forEach(key => {
                         orderbyitem[key] = true;
                     });
-                    settable(thedata);
+                    showdata = Object.assign(thedata)
+                    settable(showdata);
                 },
                 error: function (jqXHR, errmsg) {
                     console.error(errmsg);
@@ -69,14 +71,14 @@
         function orderby(what) {
             console.log(what, orderbyitem[what])
             if (orderbyitem[what]) {
-                thedata.sort(orderbywhat(what));
+                showdata.sort(orderbywhat(what));
                 console.log(0);
             } else {
-                thedata.sort(orderbywhat(what)).reverse();
+                showdata.sort(orderbywhat(what)).reverse();
                 console.log(1);
             }
             orderbyitem[what] = !orderbyitem[what];
-            settable(thedata);
+            settable(showdata);
         }
         function orderbywhat(what) {
             return function (a, b) {
@@ -89,10 +91,19 @@
                 }
             }
         }
+        function filter(input) {
+            //console.log(input);
+            let fil = "telephone";
+            showdata = Object.assign(thedata.filter(function (elem) {
+                return (elem[fil].indexOf(input) != -1) ? true : false;
+            }));
+            settable(showdata);
+        }
     </script>
 }
 <button onclick="getdata('XML')">get xml</button>
 <button onclick="getdata('Json')">get json</button>
+<input type="text" name="filter" value="" id="inputfilter" oninput="filter(this.value)"/>
 <table id="thetable">
 
 </table>
